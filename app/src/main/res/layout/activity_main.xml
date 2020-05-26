@@ -76,6 +76,7 @@
             android:id="@+id/button_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="buttom_loging"
             android:text="登入" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

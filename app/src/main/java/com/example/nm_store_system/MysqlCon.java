@@ -1,6 +1,7 @@
 package com.example.nm_store_system;
 
 import android.util.Log;
+import android.util.LogPrinter;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

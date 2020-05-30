@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
             thread_login.start();
             try {
                 thread_login.join();
-
-                if (result = true){
+                if (result){
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this,store_main.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("account",AP[0]);
                     intent.putExtras(bundle);
                     startActivity(intent);
+                    MainActivity.this.finish();
                 } else {
                     Toast.makeText(MainActivity.this,"帳號或密碼錯誤，請重式", Toast.LENGTH_LONG).show();
                 }

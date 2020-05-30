@@ -50,7 +50,8 @@
             android:layout_marginRight="20dp"
             android:autoText="false"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="ac001" />
 
         <TextView
             android:id="@+id/textView2"
@@ -70,7 +71,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="pw001" />
 
         <Button
             android:id="@+id/button_login"

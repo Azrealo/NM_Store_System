@@ -335,7 +335,7 @@ public class MysqlCon {
         try {
             Connection con =  DriverManager.getConnection(url02, db_user, db_password);
             Statement st = con.createStatement();
-            st.executeUpdate("update " + account +"_orders set is_cancel = '1' ,is_over = '1' where customerID = '" + customerID  +"';");
+            st.executeUpdate("update " + account +"_orders set is_check = '0',is_cancel = '1',is_over = '1' where customerID = '" + customerID  +"';");
 
             Log.v("cancel","canceled");
 
@@ -362,7 +362,7 @@ public class MysqlCon {
         try {
             Connection con =  DriverManager.getConnection(url02, db_user, db_password);
             Statement st = con.createStatement();
-            st.executeUpdate("update " + account +"_orders set is_over = '1'  where customerID = '" + customerID  +"';");
+            st.executeUpdate("update " + account +"_orders set is_check = '1',is_done = '1',is_cancel = '0',is_over = '1'  where customerID = '" + customerID  +"';");
             Log.v("over","over");
 
         }catch (Exception e) {

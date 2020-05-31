@@ -92,7 +92,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:onClick="edit"
-            android:text="商品數量更改" />
+            android:text="商品數量更改"
+            tools:visibility="gone" />
 
         <Button
             android:id="@+id/buttom_storeshutdown"

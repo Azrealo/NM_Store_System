@@ -145,7 +145,9 @@ public class activity_orders extends AppCompatActivity {
             public TextView textView_price;
             public Button button_over;
             public ScrollView scroll;
-
+            public String[] orders_splite  ;
+            public String final_info;
+            public int i ;
 
 
 
@@ -190,9 +192,15 @@ public class activity_orders extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull final Myadapter.MyViewHolder holder, final int position) {
-
+            holder.orders_splite = new String[]{};
+            holder.final_info = "";
+            holder.orders_splite = data.get(position).get("orders").split(",");
+            holder.final_info = holder.orders_splite[0];
+            for(holder.i =1 ; holder.i <holder.orders_splite.length;holder.i++){
+                holder.final_info = holder.final_info + "\n" + holder.orders_splite[holder.i];
+            }
             holder.textView_CustomerName.setText(data.get(position).get("customerID"));
-            holder.textView_OrdersInfo.setText(data.get(position).get("orders"));
+            holder.textView_OrdersInfo.setText(holder.final_info);
             holder.textView_price.setText(data.get(position).get("total_price"));
 
             if (A[0] > 0) {
@@ -216,6 +224,7 @@ public class activity_orders extends AppCompatActivity {
                     Thread get_ordersdata = new get_ordersdata();
                     Thread adaptert_lord = new adaptert_lord();
                     customesID = holder.textView_CustomerName.getText().toString();
+
                     Thread a = new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -257,6 +266,7 @@ public class activity_orders extends AppCompatActivity {
                             con.done(account,customesID);
                         }
                     });
+                    holder.textView_OrdersState.setText("已完成");
                     a.start();
                     try{
                         a.join();

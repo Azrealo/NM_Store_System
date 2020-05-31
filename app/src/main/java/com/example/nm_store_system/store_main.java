@@ -103,7 +103,7 @@ public class store_main extends AppCompatActivity {
                         con.stop(account);
                     }
                 }).start();
-                Toast.makeText(this,"已成功關閉商店",Toast.LENGTH_LONG);
+                Toast.makeText(this,"已成功關閉商店",Toast.LENGTH_LONG).show();
                 shop_state.setText("休息中");
                 shop_state.setTextColor(Color.RED);
             }else {

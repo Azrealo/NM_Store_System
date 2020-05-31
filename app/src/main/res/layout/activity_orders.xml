@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".activity_orders">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_BackToMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="button_BackToMain"
+            android:text="回到主選單" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

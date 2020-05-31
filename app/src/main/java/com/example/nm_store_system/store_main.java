@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,8 @@ public class store_main extends AppCompatActivity {
         account = bundle.getString("account");
         TextView name_textview = findViewById(R.id.who_text);
          shop_state = findViewById(R.id.textview_shop_state);
+         Button button_G = findViewById(R.id.buttom_edit);
+         button_G.setVisibility(View.GONE);
 
         name_textview.setText(account);
         Thread shop_check = new shop_check();
@@ -60,6 +63,7 @@ public class store_main extends AppCompatActivity {
 
     }
     public void edit (View view){
+
         Intent intent = new Intent();
         Bundle bundle = new Bundle();
         bundle.putString("account",account);

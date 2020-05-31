@@ -43,6 +43,7 @@ public class activity_edit extends AppCompatActivity {
                 goodsdata = con.get_goodsdata(account,A[0]);
             }
         });
+
         get_goodsdata.start();
         try {
             get_goodsdata.join();
